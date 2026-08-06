@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-:root { --ink:#2c211b; --brown:#745644; --cream:#f7f2ec; --sand:#e9ddd1; }
+:root { --ink:#2c211b; --brown:#255463; --cream:#f7f2ec; --sand:#e9ddd1; }
 * { box-sizing:border-box; }
 html { scroll-behavior:smooth; }
 body { margin:0; background:var(--cream); color:var(--ink); font-family:var(--font-inter), Arial, sans-serif; }

@@ -1,117 +1,27 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
+
+const links = [["Acasă", "#acasa"], ["Servicii", "#servicii"], ["Galerie", "#galerie"], ["Despre", "#despre"], ["Contact", "#contact"]];
 
 export default function Navbar() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
+  const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 24);
+    onScroll(); window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+  const close = () => setOpen(false);
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-neutral-200 bg-white/90 backdrop-blur-md">
-      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
-
-        <a
-          href="#acasa"
-          className="text-xl font-semibold tracking-wide"
-        >
-          Brows & Lashes
-        </a>
-
-        <nav className="hidden items-center gap-8 text-sm md:flex">
-
-          <a
-            href="#servicii"
-            className="transition hover:text-[#8a7261]"
-          >
-            Servicii
-          </a>
-
-          <a
-            href="#galerie"
-            className="transition hover:text-[#8a7261]"
-          >
-            Galerie
-          </a>
-
-          <a
-            href="#despre"
-            className="transition hover:text-[#8a7261]"
-          >
-            Despre
-          </a>
-
-          <a
-            href="#contact"
-            className="transition hover:text-[#8a7261]"
-          >
-            Contact
-          </a>
-
-        </nav>
-
-        <a
-          href="https://wa.me/40722808515"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="hidden rounded-full bg-[#8a7261] px-6 py-3 text-sm font-medium text-white transition hover:bg-[#6f5d50] md:block"
-        >
-          Programează-te
-        </a>
-
-        <button
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="text-3xl md:hidden"
-          aria-label="Deschide meniul"
-        >
-          ☰
-        </button>
+    <header className={`fixed inset-x-0 top-0 z-50 transition ${scrolled || open ? "border-b border-stone-200 bg-white/95 backdrop-blur" : "bg-transparent"}`}>
+      <div className="mx-auto flex h-20 max-w-[1440px] items-center justify-between px-6 lg:px-12">
+        <a href="#acasa" onClick={close} className="font-[family-name:var(--font-cormorant)] text-2xl font-semibold tracking-tight">Brows & Lashes</a>
+        <nav className="hidden items-center gap-8 text-[11px] font-medium uppercase tracking-[0.18em] md:flex">{links.map(([label, href]) => <a key={href} href={href} className="transition hover:text-[#745644]">{label}</a>)}</nav>
+        <a href="https://wa.me/40722808515" target="_blank" rel="noreferrer" className="hidden bg-[#745644] px-5 py-3 text-[11px] font-medium uppercase tracking-[0.15em] text-white transition hover:bg-[#2c211b] md:block">Programează-te</a>
+        <button type="button" onClick={() => setOpen(!open)} aria-label="Deschide meniul" className="text-2xl md:hidden">{open ? "×" : "☰"}</button>
       </div>
-
-      {mobileMenuOpen && (
-        <nav className="border-t border-neutral-200 bg-white md:hidden">
-
-          <a
-            href="#servicii"
-            onClick={() => setMobileMenuOpen(false)}
-            className="block px-6 py-4"
-          >
-            Servicii
-          </a>
-
-          <a
-            href="#galerie"
-            onClick={() => setMobileMenuOpen(false)}
-            className="block px-6 py-4"
-          >
-            Galerie
-          </a>
-
-          <a
-            href="#despre"
-            onClick={() => setMobileMenuOpen(false)}
-            className="block px-6 py-4"
-          >
-            Despre
-          </a>
-
-          <a
-            href="#contact"
-            onClick={() => setMobileMenuOpen(false)}
-            className="block px-6 py-4"
-          >
-            Contact
-          </a>
-
-          <a
-            href="https://wa.me/40722808515"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block px-6 py-4 font-medium text-[#8a7261]"
-          >
-            Programează-te
-          </a>
-
-        </nav>
-      )}
+      {open && <nav className="border-t border-stone-200 bg-white px-6 py-4 md:hidden">{links.map(([label, href]) => <a key={href} href={href} onClick={close} className="block py-3 text-sm">{label}</a>)}<a href="https://wa.me/40722808515" target="_blank" rel="noreferrer" className="mt-2 block bg-[#745644] px-4 py-3 text-center text-xs uppercase tracking-wider text-white">Programează-te</a></nav>}
     </header>
   );
 }

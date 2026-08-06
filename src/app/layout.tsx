@@ -1,43 +1,26 @@
 import type { Metadata } from "next";
+import { Cormorant_Garamond, Inter } from "next/font/google";
 import "./globals.css";
 
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+const cormorant = Cormorant_Garamond({
+  subsets: ["latin"],
+  variable: "--font-cormorant",
+  weight: ["400", "500", "600", "700"],
+});
+
 export const metadata: Metadata = {
-  title: "Brows & Lashes by Alexandra",
-  description:
-    "Studio premium din București specializat în pensat, laminare sprâncene, laminare gene și masaj facial.",
-
-  keywords: [
-    "pensat București",
-    "laminare sprâncene",
-    "laminare gene",
-    "brow spa",
-    "masaj facial",
-    "Aviatiei",
-  ],
-
-  authors: [
-    {
-      name: "Brows & Lashes by Alexandra",
-    },
-  ],
-
+  title: "Brows & Lashes by Alexandra | Beauty Studio București",
+  description: "Stilizare premium a sprâncenelor, laminare gene și ritualuri faciale la Brows & Lashes by Alexandra, București.",
   openGraph: {
     title: "Brows & Lashes by Alexandra",
-    description:
-      "Studio premium de beauty în București.",
+    description: "Beauty studio premium în București.",
     type: "website",
     locale: "ro_RO",
+    images: [{ url: "/images/logo.png", alt: "Brows & Lashes by Alexandra" }],
   },
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  return (
-    <html lang="ro">
-      <body>{children}</body>
-    </html>
-  );
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+  return <html lang="ro"><body className={`${inter.variable} ${cormorant.variable}`}>{children}</body></html>;
 }

@@ -1,7 +1,7 @@
 const benefits = [
   ["🍃", "Produse profesionale", "Folosesc doar produse de înaltă calitate."],
   ["♡", "Experiență personalizată", "Fiecare serviciu este adaptat nevoilor tale."],
-  ["✦", "Rezultate naturale", "Evidențiem frumusețea ta naturală."],
+  ["✦", "Rezultate naturale", "Evidențiez frumusețea ta naturală."],
   ["✿", "Atmosferă relaxantă", "Un spațiu intim pentru o experiență completă."],
 ];
 

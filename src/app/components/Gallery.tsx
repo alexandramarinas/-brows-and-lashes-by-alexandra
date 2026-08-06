@@ -4,6 +4,9 @@ const results = [
   ["/images/ba1.jpg", "Before / After — Brows & Lashes"],
   ["/images/ba2.jpg", "Before / After — Brows"],
   ["/images/ba3.jpg", "Before / After — Brows"],
+  ["/images/pensat.jpeg", "Before / After — Pensat"],
+  ["/images/pensatalexandra.jpeg", "Before / After — Rezultat natural"],
+  ["/images/pensatbunny.jpeg", "Before / After — Pensat + vopsit"],
 ];
 
 export default function Gallery() {

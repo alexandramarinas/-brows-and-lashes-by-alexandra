@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Brows & Lashes by Alexandra — frumusețe definită prin detalii." />
+  <title>Brows & Lashes by Alexandra</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet" />
+  <style>
+    :root { --ink:#342c2a; --muted:#796c67; --rose:#c79b91; --blush:#f8eeea; --cream:#fffdfa; --line:#eadbd6; --dark:#42302e; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; color:var(--ink); font-family:"DM Sans",sans-serif; background:var(--cream); }
+    h1,h2,h3,p { margin-top:0; } h1,h2,h3 { font-family:"Playfair Display",serif; font-weight:600; }
+    a { color:inherit; text-decoration:none; }
+    .wrap { width:min(1140px,calc(100% - 40px)); margin:auto; }
+    .eyebrow { color:var(--rose); text-transform:uppercase; letter-spacing:.16em; font-weight:700; font-size:.69rem; }
+    .button { display:inline-flex; justify-content:center; align-items:center; min-height:48px; padding:0 24px; border:1px solid var(--dark); background:var(--dark); color:#fff; font-size:.76rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; transition:.2s; }
+    .button:hover { background:transparent; color:var(--dark); } .button.light { background:#fff; color:var(--dark); border-color:#fff; } .button.light:hover { background:transparent; color:#fff; }
+    header { position:absolute; inset:0 0 auto; z-index:2; color:#fff; }
+    nav { min-height:88px; display:flex; align-items:center; justify-content:space-between; gap:20px; }
+    .logo { font-family:"Playfair Display",serif; font-size:1.25rem; line-height:.95; } .logo span { display:block; font-family:"DM Sans",sans-serif; font-size:.55rem; letter-spacing:.22em; text-transform:uppercase; margin-top:7px; }
+    .nav-links { display:flex; align-items:center; gap:28px; font-size:.75rem; letter-spacing:.08em; text-transform:uppercase; }
+    .nav-links a:hover { opacity:.7; }
+    .hero { min-height:690px; display:grid; align-items:end; padding:150px 0 75px; color:#fff; background:linear-gradient(90deg,rgba(44,31,29,.68),rgba(44,31,29,.18)),url('https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=1800&q=85') center/cover; }
+    .hero-content { max-width:700px; } .hero h1 { font-size:clamp(3rem,7vw,6.25rem); line-height:.98; letter-spacing:-.045em; margin:18px 0 24px; } .hero h1 em { font-weight:500; }
+    .hero p { max-width:450px; font-size:1.04rem; line-height:1.7; margin-bottom:32px; color:rgba(255,255,255,.9); }
+    .intro { display:grid; grid-template-columns:1fr 1fr; gap:90px; align-items:center; padding:125px 0; }
+    .image-frame { position:relative; padding:0 32px 32px 0; } .image-frame:after { content:""; position:absolute; inset:32px 0 0 32px; border:1px solid var(--rose); z-index:-1; } .image-frame img { width:100%; aspect-ratio:4/5; object-fit:cover; display:block; }
+    .intro h2,.services h2,.booking h2 { font-size:clamp(2.3rem,4vw,4rem); line-height:1.08; margin:13px 0 22px; } .intro p { color:var(--muted); line-height:1.8; max-width:470px; }
+    .signature { font-family:"Playfair Display",serif; font-style:italic; color:var(--rose); font-size:1.4rem; margin:25px 0 0; }
+    .services { background:var(--blush); padding:108px 0; text-align:center; } .services > .wrap > p:not(.eyebrow) { max-width:530px; color:var(--muted); line-height:1.7; margin:0 auto 46px; }
+    .service-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; text-align:left; } .service { padding:34px 28px; background:var(--cream); border:1px solid rgba(199,155,145,.18); } .service .number { color:var(--rose); font-family:"Playfair Display",serif; font-size:1.35rem; } .service h3 { font-size:1.6rem; margin:16px 0 13px; } .service p { color:var(--muted); line-height:1.7; font-size:.92rem; margin-bottom:0; }
+    .quote { padding:105px 20px; background:var(--dark); color:#fff; text-align:center; } .quote blockquote { max-width:900px; margin:0 auto; font-family:"Playfair Display",serif; font-size:clamp(2rem,4.5vw,4.2rem); line-height:1.16; letter-spacing:-.035em; } .quote cite { display:block; margin-top:28px; color:#dcb9b0; font-style:normal; font-family:"DM Sans",sans-serif; font-size:.7rem; font-weight:700; letter-spacing:.16em; text-transform:uppercase; }
+    .gallery { padding:112px 0; } .gallery-heading { display:flex; align-items:end; justify-content:space-between; gap:20px; margin-bottom:40px; } .gallery h2 { margin:12px 0 0; font-size:clamp(2.3rem,4vw,3.8rem); } .gallery-heading p { color:var(--muted); max-width:330px; line-height:1.65; margin:0; }
+    .gallery-grid { display:grid; grid-template-columns:1.08fr .92fr .92fr; gap:15px; } .gallery-grid img { display:block; width:100%; height:100%; object-fit:cover; } .gallery-grid > :first-child { height:430px; } .gallery-grid > :not(:first-child) { height:430px; }
+    .booking { padding:100px 0; text-align:center; background:linear-gradient(rgba(64,45,42,.7),rgba(64,45,42,.7)),url('https://images.unsplash.com/photo-1487412912498-0447578fcca8?auto=format&fit=crop&w=1800&q=85') center/cover; color:#fff; } .booking p:not(.eyebrow) { color:rgba(255,255,255,.85); line-height:1.7; max-width:500px; margin:0 auto 30px; }
+    footer { padding:32px 0; font-size:.78rem; color:var(--muted); } .footer-row { display:flex; justify-content:space-between; gap:18px; flex-wrap:wrap; } .footer-row strong { color:var(--ink); }
+    @media (max-width:760px) { .nav-links { display:none; } nav .button { padding:0 15px; min-height:41px; font-size:.63rem; } .hero { min-height:650px; padding-bottom:55px; } .intro { grid-template-columns:1fr; gap:55px; padding:80px 0; } .image-frame { max-width:500px; } .service-grid,.gallery-grid { grid-template-columns:1fr; } .gallery-grid > *,.gallery-grid > :first-child { height:340px; } .services,.gallery { padding:80px 0; } .gallery-heading { display:block; } .gallery-heading p { margin-top:18px; } }
+  </style>
+</head>
+<body>
+  <header><nav class="wrap"><a class="logo" href="#acasa">Brows & Lashes<span>by Alexandra</span></a><div class="nav-links"><a href="#despre">Despre</a><a href="#servicii">Servicii</a><a href="#galerie">Galerie</a></div><a class="button light" href="#programare">Programează-te</a></nav></header>
+  <main>
+    <section class="hero" id="acasa"><div class="wrap hero-content"><p class="eyebrow" style="color:#f5d9d2">Brows & Lashes by Alexandra</p><h1>Frumusețe <em>definită</em> prin detalii.</h1><p>Sprâncene și gene personalizate pentru a evidenția exact ceea ce te face unică.</p><a class="button light" href="#programare">Rezervă o programare</a></div></section>
+    <section class="intro wrap" id="despre"><div class="image-frame"><img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=900&q=85" alt="Detaliu elegant de beauty studio" /></div><div><p class="eyebrow">Despre studio</p><h2>Mai mult decât un serviciu de înfrumusețare.</h2><p>Fiecare programare începe cu o discuție despre trăsăturile, rutina și stilul tău. Rezultatul? Un look armonios, atent construit și ușor de purtat în fiecare zi.</p><p class="signature">Cu grijă pentru detalii, Alexandra</p></div></section>
+    <section class="services" id="servicii"><div class="wrap"><p class="eyebrow">Ritualul tău de beauty</p><h2>Servicii create pentru tine</h2><p>Tehnici moderne, produse atent alese și un rezultat care arată natural — doar mai luminos.</p><div class="service-grid"><article class="service"><div class="number">01</div><h3>Brows</h3><p>Stilizare și modelare personalizată pentru sprâncene echilibrate și expresive.</p></article><article class="service"><div class="number">02</div><h3>Lash lift</h3><p>Gene curbate, definite și cu aspect natural, fără extensii.</p></article><article class="service"><div class="number">03</div><h3>Extensii gene</h3><p>Volum discret sau un efect glam — adaptat formei ochilor și preferințelor tale.</p></article></div></div></section>
+    <section class="quote"><blockquote>„Cele mai frumoase rezultate sunt cele în care te recunoști, doar că te privești cu mai multă încredere.”</blockquote><cite>Brows & Lashes by Alexandra</cite></section>
+    <section class="gallery wrap" id="galerie"><div class="gallery-heading"><div><p class="eyebrow">Inspirație</p><h2>Detalii care spun totul.</h2></div><p>Un spațiu calm, o experiență atentă și rezultate care îți pun trăsăturile în valoare.</p></div><div class="gallery-grid"><img src="https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?auto=format&fit=crop&w=850&q=85" alt="Machiaj natural" /><img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=850&q=85" alt="Portret beauty" /><img src="https://images.unsplash.com/photo-1503236823255-94609f598e71?auto=format&fit=crop&w=850&q=85" alt="Portret cu gene definite" /></div></section>
+    <section class="booking" id="programare"><div class="wrap"><p class="eyebrow" style="color:#f5d9d2">E momentul tău</p><h2>Oferă-ți o oră doar pentru tine.</h2><p>Pentru programări și întrebări, trimite un mesaj. Împreună alegem serviciul potrivit pentru tine.</p><a class="button light" href="mailto:hello@example.com">Contactează-mă</a></div></section>
+  </main>
+  <footer><div class="wrap footer-row"><span><strong>Brows & Lashes by Alexandra</strong> — frumusețe în detalii.</span><span>© 2026 Toate drepturile rezervate.</span></div></footer>
+</body>
+</html>

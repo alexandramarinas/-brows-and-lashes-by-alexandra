@@ -2,6 +2,7 @@ import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Services from "./components/Services";
 import Gallery from "./components/Gallery";
+import Highlights from "./components/Highlights";
 import About from "./components/About";
 import Testimonials from "./components/Testimonials";
 import FAQ from "./components/FAQ";
@@ -16,6 +17,7 @@ export default function Home() {
         <Hero />
         <Services />
         <Gallery />
+        <Highlights />
         <About />
         <Testimonials />
         <FAQ />

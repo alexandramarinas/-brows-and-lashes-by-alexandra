@@ -17,7 +17,6 @@ export const metadata: Metadata = {
     description: "Beauty studio premium în București.",
     type: "website",
     locale: "ro_RO",
-    images: [{ url: "/images/logo.png", alt: "Brows & Lashes by Alexandra" }],
   },
 };
 
